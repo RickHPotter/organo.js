@@ -10,8 +10,8 @@ export const TextField = (props) => {
         type="text"
         name="username"
         placeholder={props.ph}
-        value={''}
-        onChange={() => {}}
+        value={props.value}
+        onChange={(e) => props.onChange(e.target.value)}
       />
     </div>
   );

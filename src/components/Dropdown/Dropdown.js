@@ -1,14 +1,18 @@
-import './Dropdown.css'
+import "./Dropdown.css";
 
 export const Dropdown = (props) => {
   return (
-    <div className='dropdown'>
+    <div className="dropdown">
       <label>{props.label}</label>
-      <select required={props.required}>
+      <select
+        required={props.required}
+        value={props.value}
+        onChange={(e) => props.onChange(e.target.value)}
+      >
         {props.itens.map((item) => (
           <option key={item}>{item}</option>
         ))}
       </select>
     </div>
-  )
-}
+  );
+};
