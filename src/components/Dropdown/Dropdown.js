@@ -9,6 +9,7 @@ export const Dropdown = (props) => {
         value={props.value}
         onChange={(e) => props.onChange(e.target.value)}
       >
+        <option value=""></option>
         {props.itens.map((item) => (
           <option key={item}>{item}</option>
         ))}

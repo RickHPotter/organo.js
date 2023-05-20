@@ -9,11 +9,15 @@ export const Form = (props) => {
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [image, setImage] = useState("");
-  const [squad, setSquad] = useState(props.itens[0]);
+  const [squad, setSquad] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.onSubmit({name, role, image, squad})
+    props.formSubmit({name, role, image, squad})
+    setName("");
+    setRole("");
+    setImage("");
+    setSquad(props.itens[0]);
   };
 
   return (

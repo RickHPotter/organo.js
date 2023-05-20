@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./App.css";
+
 import Banner from "./components/Banner/";
 import Form from "./components/Form";
 import Squad from "./components/Squad";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   const squads = [
@@ -43,10 +45,18 @@ function App() {
     },
   ];
 
-  const [collabs, setCollabs] = useState([]);
+  const [collabs, setCollabs] = useState([
+    {
+      name: "RickHPotter",
+      role: "FullStack Developer | Mobile Developer | ML Enthusiast",
+      image: "https://github.com/RickHPotter.png",
+      squad: squads[0].name,
+    },
+  ]);
+
   const newCollab = (collab) => {
+    // debugger
     setCollabs([...collabs, collab]);
-    console.log(collabs);
   };
 
   return (
@@ -54,7 +64,7 @@ function App() {
       <Banner />
       <Form
         itens={squads.map((obj) => obj.name)}
-        onSubmit={(collab) => newCollab(collab)}
+        formSubmit={(collab) => newCollab(collab)}
       />
 
       {squads.map((squad) => (
@@ -63,8 +73,10 @@ function App() {
           name={squad.name}
           primaryColour={squad.primaryColour}
           secondaryColour={squad.secondaryColour}
+          collabs={collabs.filter((collab) => collab.squad === squad.name)}
         />
       ))}
+      <Footer />
     </div>
   );
 }

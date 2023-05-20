@@ -1,12 +1,27 @@
 .squad {
   text-align: center;
   padding: 32px;
-
 }
 
 .squad h3 {
   font-size: 32px;
-  border-bottom: 4px solid;
+
+  border-bottom: 1px solid transparent;
+  border-image-source: linear-gradient(
+    to right,
+    transparent 0 30%,
+    black 30% 70%
+    transparent 70%
+  );
+  border-image-slice: 1;
+
   display: inline-block;
   padding-bottom: 8px;
+}
+
+.squad .container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 32px;
+  flex-wrap: wrap;
 }

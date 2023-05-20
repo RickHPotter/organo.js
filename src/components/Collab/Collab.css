@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+.collab {
+  min-width: 280px;
+  max-width: 460px;
+}
+
+.collab .collab-header {
+  background-color: #F0F0F0;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.collab .collab-header img {
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  bottom: -50px;
+}
+
+.collab .collab-footer {
+  background: #FFFFFF;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 0px 0px 10px 10px;
+  padding-top: 90px;
+  padding-bottom: 40px;
+  
+  font-family: 'Montserrat', sans-serif;
+}
+
+.collab .collab-footer h4 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #6278F7;
+  margin-top: 8px;
+}
+
+.collab .collab-footer h5 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #212121;
+  padding: 0 12px;
+}
