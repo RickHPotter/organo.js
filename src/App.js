@@ -19,12 +19,12 @@ function App() {
       secondaryColour: "#E8F8FF",
     },
     {
-      name: "neo nazi",
+      name: "redpill chad",
       primaryColour: "#A6D157",
       secondaryColour: "#F0F8E2",
     },
     {
-      name: "lol-player (racist)",
+      name: "lol-player (lacks vitamin D)",
       primaryColour: "#E06B69",
       secondaryColour: "#FDE7E8",
     },
