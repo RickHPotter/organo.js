@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-.form__group {
+.form--group {
   margin: 24px 0;
 }
 
-.form__group label {
+.form--group label {
   display: block;
   margin-bottom: 8px;
   font-family: 'Montserrat', sans-serif;
@@ -12,7 +12,7 @@
   font-weight: 600;
 }
 
-.form__group input {
+.form--group input {
   background-color: #FFF;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
   width: 100%;
@@ -24,3 +24,10 @@
   font-size: 16px;
   font-weight: 400;
 }
+
+.color input  {
+  padding: 5px;
+}
+
+
+

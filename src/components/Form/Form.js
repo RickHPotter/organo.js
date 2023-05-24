@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Button } from "../Button/Button";
 import { Dropdown } from "../Dropdown/Dropdown";
-import { TextField } from "../TextField/TextField";
+import { Field } from "../Field/Field";
 import "./Form.css";
 
 export const Form = (props) => {
@@ -10,35 +10,45 @@ export const Form = (props) => {
   const [role, setRole] = useState("");
   const [image, setImage] = useState("");
   const [squad, setSquad] = useState('');
+  
+  const [nameSquad, setNameSquad] = useState('');
+  const [colourSquad, setColourSquad] = useState('#000000');
 
-  const handleSubmit = (event) => {
+  const handleSubmitCollab = (event) => {
     event.preventDefault();
-    props.formSubmit({name, role, image, squad})
+    props.collabSubmit({name, role, image, squad})
     setName("");
     setRole("");
     setImage("");
     setSquad(props.itens[0]);
   };
 
+  const handleSubmitSquad = (event) => {
+    event.preventDefault();
+    props.squadSubmit({name: nameSquad, primaryColour: colourSquad})
+    setNameSquad("");
+    setColourSquad("");
+  };
+
   return (
     <section className="form">
-      <form onSubmit={handleSubmit} action="">
+      <form onSubmit={handleSubmitCollab} action="">
         <h1>Fill in this form to create a collab card.</h1>
-        <TextField
-          required={true}
+        <Field
+          required
           label="Name"
           ph="Jane Doe"
           value={name}
           onChange={(value) => setName(value)}
         />
-        <TextField
-          required={true}
+        <Field
+          required
           label="Role"
           ph="Chief Executive"
           value={role}
           onChange={(value) => setRole(value)}
         />
-        <TextField
+        <Field
           label="Image"
           ph="https://unsplash.com/photos/I_uFHRMccaw"
           value={image}
@@ -52,6 +62,26 @@ export const Form = (props) => {
           onChange={(value) => setSquad(value)}
         />
         <Button>Create</Button>
+      </form>
+
+      <form onSubmit={handleSubmitSquad} action="">
+        <h1>Fill in this form to create a Squad card.</h1>
+        <Field
+          required
+          label="Name"
+          ph="Anonymous Virgins Squad"
+          value={nameSquad}
+          onChange={(value) => setNameSquad(value)}
+        />
+        <Field
+          required
+          type="color"
+          label="Colour"
+          ph="Chief Executive"
+          value={colourSquad}
+          onChange={(value) => setColourSquad(value)}
+        />
+        <Button>Create New Squad</Button>
       </form>
     </section>
   );
